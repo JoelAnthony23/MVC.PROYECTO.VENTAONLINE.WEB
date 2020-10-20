@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Venta</title>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <link href="~/Content/Login/StyleLogin.css" rel="stylesheet" />
+</head>
+<body class="align">
+
+    <div class="grid">
+
+        <div id="login">
+
+            <h2><span class="fontawesome-lock"></span>Sign In</h2>
+
+            <form>
+
+                <fieldset>
+
+                    <p><label for="email">E-mail address</label></p>
+                    <p><input class="txtusuario" id="email" placeholder="usuario"></p>
+
+                    <p><label for="password">Password</label></p>
+                    <p><input type="password" id="password" class="txtpassword" placeholder="password"></p>
+
+
+                    <p><input type="submit" class="btn-buscar" value="Sign In"></p>
+
+                </fieldset>
+
+            </form>
+
+        </div> <!-- end login -->
+
+
+    </div>
+    <div>
+        <div class="main-content">
+            @RenderBody()
+        </div>
+
+    </div>
+    @Scripts.Render("~/bundles/appscripts")
+    <script type="text/javascript">
+        $(document).ready(app.pagina.Login.init);
+
+    </script>
+</body>
+</html>
+

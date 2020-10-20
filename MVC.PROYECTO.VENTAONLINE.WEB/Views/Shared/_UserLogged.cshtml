@@ -1,0 +1,9 @@
+﻿@using MVC.PROYECTO.VENTAONLINE.WEB.Helpers
+@if (SecurityHelpers.IsLogged())
+{
+    <span>@SecurityHelpers.GetUserFullName()</span>
+    <span>@SecurityHelpers.GetUserEmail()</span>
+    <span>@SecurityHelpers.GetUseRoles()</span>
+    <span>@SecurityHelpers.GetUser()</span>
+    @*<span>@SecurityHelpers.GetUserID()</span>*@
+}

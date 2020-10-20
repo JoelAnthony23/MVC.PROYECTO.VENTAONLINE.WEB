@@ -1,0 +1,79 @@
+﻿@model MVC.PROYECTO.VENTAONLINE.WEB.Areas.ProductoAdmi.Models.BusquedaProductosViewModel
+@{
+    Layout = null;
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@using (Ajax.BeginForm("Buscar", "AdminProductos",
+         new AjaxOptions
+         {
+             HttpMethod = "POST",
+             InsertionMode = InsertionMode.Replace,
+             UpdateTargetId = "listado"
+         }))
+{
+    @*<link href="~/Areas/ProductoAdmi/Content/Styles.css" rel="stylesheet" />*@
+    <script src="~/Scripts/app/pagina/admin/productos/producto.js"></script>
+    <script src="~/Scripts/app/lib/common.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="form-group row">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Producto</span>
+                        </div>
+                        <input class="form-control" name="Descripcion" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Categoria</span>
+                        </div>
+                        @Html.DropDownList("Categoria", new SelectList(Model.LCategoria, "IdCategoria", "Descripcion"), "Todos",
+
+                        new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary">Consultar</button>
+                        </div>
+                        <div class="col">
+                            <div class="row col-align-right">
+                                <div class="col"><button type="button" class="btnNuevo btn btn-success">Nuevo</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="form-group row">
+                    <div id="listado">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Content/css-admin")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(app.pagina.admin.producto.init)
+    </script>
+
+}
+

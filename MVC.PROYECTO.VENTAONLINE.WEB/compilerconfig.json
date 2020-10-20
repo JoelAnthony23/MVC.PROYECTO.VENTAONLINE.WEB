@@ -1,0 +1,30 @@
+﻿[
+  {
+    "inputFile": "Scss/StyleLogin.scss",
+    "outputFile": "Content/Login/StyleLogin.css"
+  },
+  {
+    "outputFile": "Scripts/app/pagina/Login.es5.js",
+    "inputFile": "Scripts/app/pagina/Login.js"
+  },
+  {
+    "outputFile": "Content/Principal/menu.css",
+    "inputFile": "Scss/menu.scss"
+  },
+  {
+    "outputFile": "Content/Principal/StyleDetalleProducto.css",
+    "inputFile": "Scss/StyleDetalleProducto.scss"
+  },
+  {
+    "outputFile": "Scripts/app/pagina/busquedaproductos.es5.js",
+    "inputFile": "Scripts/app/pagina/busquedaproductos.js"
+  },
+  {
+    "outputFile": "Scripts/app/pagina/producto.es5.js",
+    "inputFile": "Scripts/app/pagina/producto.js"
+  },
+  {
+    "outputFile": "Areas/ProductoAdmi/Content/Styles.css",
+    "inputFile": "Scss/Style-admin.scss"
+  }
+]

@@ -1,0 +1,46 @@
+﻿
+@model List<MVC.PROYECTO.VENTAONLINE.APPLICATION.DTO.Producto.ConsultaProductoResponseDTO>
+
+@using MVC.PROYECTO.VENTAONLINE.WEB.Helpers
+@foreach (var item in Model)
+{
+    <script src="~/Scripts/app/pagina/producto.js"></script>
+    <script src="~/Scripts/app/lib/common.js"></script>
+    <div class="card mb-3" style="max-width: 440px; float: left; margin-left: 6px;">
+        <div class="row no-gutters">
+            <div class="col-md-8">
+                @if (!String.IsNullOrWhiteSpace(item.ImagenSrc))
+                {
+                    <img src="~/images/Productos/@item.ImagenSrc" />
+                }
+                else
+                {
+                    <img src="~/images/productos/sinfoto.jpg" />
+                }
+            </div>
+            <div class="col-md-4">
+                <div class="card-body">
+                    <h5 class="card-title">@item.NomProducto</h5>
+                    <button type="button" class="btnNuevo btn btn-success" id="@item.IdProducto">
+                         Detalle
+                     </button>
+             
+                  
+
+                    <p class="card-text">@item.NomCategoria</p>
+                    <p class="card-text">@item.NomMarca</p>
+                    <p class="card-text"><small class="text-muted">@item.PrecioUnidad</small></p>
+                    <p class="card-text"><small class="text-muted">@item.UnidadesenExistencia</small></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script type="text/javascript">
+    $(document).ready(app.pagina.producto.init);
+</script>
+
+

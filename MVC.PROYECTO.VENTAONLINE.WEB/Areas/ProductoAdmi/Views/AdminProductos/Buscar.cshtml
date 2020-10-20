@@ -1,0 +1,46 @@
+﻿
+@model MVC.PROYECTO.VENTAONLINE.WEB.Areas.ProductoAdmi.Models.BusquedaProductosViewModel
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<script src="~/Scripts/app/pagina/admin/productos/producto.js"></script>
+<script src="~/Scripts/app/lib/common.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">IdProducto</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Proveedor</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prod in Model.LconsultaProductoAdmins)
+        {
+            <tr>
+                <td>@prod.IdProducto</td>
+                <td>@prod.Nomproducto</td>
+                <td>@prod.NomProveedor</td>
+                <td>@prod.NomCategoria</td>
+                <td>@prod.NomMarca</td>
+                <td>@prod.Cantidad</td>
+                <td>@prod.Precio</td>
+                <td>@prod.Stock</td>
+                <td><button type="button" class="btnActualizar btn-primary" id="@prod.IdProducto">Actualizar</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/Content/css-admin")
+@Scripts.Render("~/bundles/jqueryval")
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(app.pagina.admin.producto.initActualizar)
+</script>

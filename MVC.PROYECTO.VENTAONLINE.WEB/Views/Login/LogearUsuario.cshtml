@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+@model MVC.PROYECTO.VENTAONLINE.WEB.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "LogearUsuario";
+}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>App</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+   <link href="//fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700,800" rel="stylesheet">
+        <link href="~/Content/Login/StyleLogin.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="w3l-forms-main-61">
+        <div class="form-inner">
+            <div class="wrapper">              
+                <div class="form-bg-blur">
+                    <div class="form-61">
+                        <h4 class="form-head">User Login</h4>
+                        @using (Html.BeginForm())
+                        {
+                            <form action="#" method="POST">
+                                <div class="">
+                                    <p class="text-head">Usuario</p>  
+                                    @*<input type="text" name="Usuario" class="input" required />*@
+                                    @Html.EditorFor(item => item.Usuario)
+                                </div>
+                                <div class="">
+                                    <p class="text-head">Contraseña</p>
+                                    @*<input type="password" name="Password" class="input" required />*@
+                                    @Html.EditorFor(item => item.Password)
+                                </div>
+                                <button type="submit" class="signinbutton btn">Ingresar</button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+
